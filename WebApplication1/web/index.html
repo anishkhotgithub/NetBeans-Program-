@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        Enter Name<input type="text" id="ename">
+        <input type="button" value="Send" onclick="WebWorkerDemo()">
+        <input type="button" value="Series" onclick="SeriesDemo()">
+        <script>
+            function WebWorkerDemo() 
+            {
+                var name=document.getElementById("ename").value;
+                worker_obj=new Worker("Web_worker1.js");
+                worker_obj.postMessage(name);
+                worker_obj.onmessage=function(event)
+                {
+                  document.getElementById("result").innerHTML=event.data;
+                };
+            }
+            i=1;
+            function SeriesDemo()
+            {
+                $("#series").append(i+" ");
+                i++;
+                setTimeout(SeriesDemo,1000)
+            }
+        </script>
+        <p id="result"></p>
+        <p id="series"></p>
+    </body>
+</html>

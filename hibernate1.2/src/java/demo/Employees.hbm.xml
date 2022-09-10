@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 12, 2020 12:39:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="demo.Employees" table="EMPLOYEES" schema="ROOT" optimistic-lock="version">
+        <id name="employeeid" type="int">
+            <column name="EMPLOYEEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeename" type="string">
+            <column name="EMPLOYEENAME" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

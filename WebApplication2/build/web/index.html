@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Web Worker Demo 1</title>
+	</head>
+	<body>
+		<input type="button" value="Start Worker" onclick="startWorker()">
+                <input type="button" value="Stop Worker" onclick="stopWorker()">
+		<script>
+			function startWorker()
+			{
+				worker_obj=new Worker("Web_worker2.js");
+				worker_obj.onmessage=function(event){
+					document.getElementById("result").innerHTML=event.data;
+				};
+                                
+                                worker_obj.onerror=function(e){
+                                    document.getElementById("result").textContent=[e.filename,e.lineno,e.message];
+                                }
+			}
+                        function stopWorker(){
+                            worker_obj.terminate();
+                        }
+		</script>
+		<p id="result"></p>
+	</body>
+</html>

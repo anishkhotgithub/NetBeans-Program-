@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <style>
+            .intro
+            {
+                font-size:16px;
+                color:green;
+                font-weight:bold;
+                background:#fff;
+                border:1px solid black;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function()
+            {
+               $("#btn").bind("mouseover mouseout",function(){
+                  $("#btn").toggleClass("intro");
+               });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="btn">Hover Mouse</button>
+    </body>
+</html>

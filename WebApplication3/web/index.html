@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <input type="button" value="infiniteNumber" onClick="OnStartNumber()"><br><br>
+        
+<!--        Enter a Number:<input type="text">-->
+<!--        <input type="button" value="Submit" onclick="OnStartButton()">-->
+            <script>
+                function OnStartNumber()
+                {
+                    let a=document.createElement("p");
+                    Worker_obj=new Worker("StartNumber.js");
+                    Worker_obj.onmessage=function(event){
+                              document.getElementById("result").innerHTML=event.data;
+                    
+                    }
+                    
+                }
+            </script>
+            <p id="result"></p>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function()
+            {
+               $("button").click(function(){
+                  $("#toload").load("dummy.html")
+               });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <div id="toload"></div>
+            <button>Load dummy html file</button>
+        </div>
+    </body>
+</html>
